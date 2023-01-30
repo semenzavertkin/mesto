@@ -5,6 +5,7 @@
   background: url("../../../images/edit.svg") no-repeat center/10px 10px transparent;
   border: 1px solid #FFF;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 500px) {

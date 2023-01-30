@@ -4,7 +4,7 @@
   right: -40px;
   width: 32px;
   height: 32px;
-  background: url("../../../images/Close.svg") no-repeat center/20px 20px transparent;
+  background: url("../../../images/Close.svg") no-repeat center;
   border: none;
   padding: 0;
   cursor: pointer;

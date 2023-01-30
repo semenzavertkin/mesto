@@ -6,7 +6,8 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-  padding: 14px 0 18px;
+  padding: 0;
+  height: 50px;
   cursor: pointer;
 }
 
