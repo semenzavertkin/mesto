@@ -9,13 +9,14 @@
   padding: 0;
   height: 50px;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 605px) {
   .popup__save {
     font-size: 14px;
     line-height: 17px;
-    padding: 14px 0 14px;
+    padding: 12px 0 12px;
   }
 }
 

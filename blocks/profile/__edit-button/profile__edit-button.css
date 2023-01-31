@@ -5,13 +5,14 @@
   background: url("../../../images/edit.svg") no-repeat center/10px 10px transparent;
   border: 1px solid #FFF;
   cursor: pointer;
-  margin-top: 15px;
+  margin-bottom: 10px;
+  align-self: end;
 }
 
 @media screen and (max-width: 500px) {
   .profile__edit-button {
     width: 18px;
-    margin-top: 15px;
+    margin-bottom: 5px;
     height: 18px;
     background: url("../../../images/edit.svg") no-repeat center/7.5px 7.5px transparent;
   }
