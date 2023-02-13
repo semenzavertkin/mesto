@@ -37,7 +37,7 @@ const initialCards = [
 ];
 
 // // Попап с картинкой
-const popupBigImg = document.querySelector(".popup__big-img");
+const popupBigImg = document.querySelector(".popup_big-img");
 const popupImg = popupBigImg.querySelector(".popup__img");
 const popupText = popupBigImg.querySelector(".popup__text");
 const closePopupBigImg = popupBigImg.querySelector(".popup__close_img");
@@ -85,7 +85,7 @@ cardsContainer.append(
 
 
 // Поап добавления карточек
-const popupAddCard = document.querySelector('.popup__add-card');
+const popupAddCard = document.querySelector('.popup_add-card');
 const openPopupAddCard = document.querySelector('.profile__add-button');
 const closePopupAddCard = document.querySelector('.popup__close_add-card');
 const inputCardName = popupAddCard.querySelector('.popup__input_form_card-name');
@@ -110,7 +110,7 @@ const handleFormCardSubmit = (evt) => {
 formCard.addEventListener('submit', handleFormCardSubmit);
 
 // Поап редактирование профиля
-const popupProfileEdit = document.querySelector('.popup__profile-edit');
+const popupProfileEdit = document.querySelector('.popup_profile');
 const openPopupProfileEdit = document.querySelector('.profile__edit-button');
 const closePopupProfileEdit = document.querySelector('.popup__close_profile-edit');
 const inputUserName = popupProfileEdit.querySelector('.popup__input_form_user-name');
