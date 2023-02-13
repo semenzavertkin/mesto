@@ -64,7 +64,7 @@ const addCard = (name, link) => {
   });
 
   // открытие попапа с картинкой
-  card.querySelector(".card__img").addEventListener("click", (evt) => {
+  card.querySelector(".card__img").addEventListener("click", () => {
     popupImg.src = link;
     popupImg.alt = name;
     popupText.textContent = name;
