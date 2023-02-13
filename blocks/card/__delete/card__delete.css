@@ -1,0 +1,11 @@
+.card__delete {
+    z-index: 9;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.card__delete:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.2s;
+}
