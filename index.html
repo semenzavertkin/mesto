@@ -42,9 +42,9 @@
 
     <div class="popup popup_type_profile">
       <div class="conteiner__popup">
-        <button class="popup__close popup_close_profile-edit" type="button"></button>
+        <button class="popup__close" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form action="" class="popup__form popup_form_profile-edit" name="popupFormProfile">
+        <form action="" class="popup__form" name="popupFormProfile">
           <input name="userName" type="text" class="popup__input popup__input_form_user-name" placeholder="Имя"
             required>
           <input name="userJob" type="text" class="popup__input popup__input_form_user-job" placeholder="Профессия"
@@ -53,11 +53,11 @@
         </form>
       </div>
     </div>
-    <div class="popup popup_add-card">
+    <div class="popup popup_type_add-card">
       <div class="conteiner__popup">
-        <button class="popup__close popup_close_add-card" type="button"></button>
+        <button class="popup__close" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form action="" class="popup__form popup_form_add-card" name="popupFormCard">
+        <form action="" class="popup__form" name="popupFormCard">
           <input name="cardName" type="text" class="popup__input popup__input_form_card-name" placeholder="Название"
             required>
           <input name="cardLink" type="text" class="popup__input popup__input_form_card-link"
@@ -66,9 +66,9 @@
         </form>
       </div>
     </div>
-    <div class="popup popup_big-img">
+    <div class="popup popup_type_big-img">
       <div class="conteiner__popup-big-img">
-        <button class="popup__close popup_close_img" type="button"></button>
+        <button class="popup__close" type="button"></button>
         <img src="#" alt="" class="popup__img">
         <h2 class="popup__text"></h2>
       </div>
@@ -84,6 +84,7 @@
       </div>
     </li>
   </template>
+  <script src="./scripts/initial-сards.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 

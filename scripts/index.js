@@ -8,39 +8,11 @@ const closePopup = (popupElement) => {
   popupElement.classList.remove('popup_opened');
 }
 
-// 6 карточек при открытие
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 // // Попап с картинкой
-const popupBigImg = document.querySelector(".popup_big-img");
-const popupImg = popupBigImg.querySelector(".popup__img");
-const popupText = popupBigImg.querySelector(".popup__text");
-const closePopupBigImg = popupBigImg.querySelector(".popup_close_img");
+const popupBigImg = document.querySelector('.popup_type_big-img');
+const popupImg = popupBigImg.querySelector('.popup__img');
+const popupText = popupBigImg.querySelector('.popup__text');
+const closePopupBigImg = popupBigImg.querySelector('.popup__close');
 closePopupBigImg.addEventListener('click', () => {
   closePopup(popupBigImg);
 })
@@ -49,8 +21,8 @@ closePopupBigImg.addEventListener('click', () => {
 const cardTemplate = document.querySelector('#card-template').content;
 const addCard = (name, link) => {
   const card = cardTemplate.cloneNode(true);
-  const cardImg = card.querySelector(".card__img");
-  const cardName = card.querySelector(".card__name");
+  const cardImg = card.querySelector('.card__img');
+  const cardName = card.querySelector('.card__name');
   cardImg.src = link;
   cardImg.alt = name;
   cardName.textContent = name;
@@ -66,7 +38,7 @@ const addCard = (name, link) => {
   });
 
   // открытие попапа с картинкой
-  cardImg.addEventListener("click", () => {
+  cardImg.addEventListener('click', () => {
     popupImg.src = link;
     popupImg.alt = name;
     popupText.textContent = name;
@@ -87,9 +59,9 @@ cardsContainer.append(
 
 
 // Поап добавления карточек
-const popupAddCard = document.querySelector('.popup_add-card');
+const popupAddCard = document.querySelector('.popup_type_add-card');
 const openPopupAddCard = document.querySelector('.profile__add-button');
-const closePopupAddCard = document.querySelector('.popup_close_add-card');
+const closePopupAddCard = popupAddCard.querySelector('.popup__close');
 const inputCardName = popupAddCard.querySelector('.popup__input_form_card-name');
 const inputCardlink = popupAddCard.querySelector('.popup__input_form_card-link');
 
@@ -101,7 +73,7 @@ closePopupAddCard.addEventListener('click', () => {
   closePopup(popupAddCard);
 })
 
-const formCard = document.querySelector('.popup_form_add-card');
+const formCard = popupAddCard.querySelector('.popup__form');
 const handleFormCardSubmit = (evt) => {
   evt.preventDefault();
   cardsContainer.prepend(addCard(inputCardName.value, inputCardlink.value));
@@ -113,20 +85,20 @@ formCard.addEventListener('submit', handleFormCardSubmit);
 
 // Поап редактирование профиля
 const popupProfileEdit = document.querySelector('.popup_type_profile');
-const openPopupProfileEdit = document.querySelector('.profile__edit-button');
-const closePopupProfileEdit = document.querySelector('.popup_close_profile-edit');
+const openPopupProfileEditBtn = document.querySelector('.profile__edit-button');
+const closePopupProfileEditBtn = document.querySelector('.popup__close');
 const inputUserName = popupProfileEdit.querySelector('.popup__input_form_user-name');
 const inputUserJob = document.querySelector('.popup__input_form_user-job');
 const nameProfile = document.querySelector('.profile__name');
 const jobProfile = document.querySelector('.profile__job');
-const formProfile = document.querySelector('.popup_form_profile-edit')
+const formProfile = popupProfileEdit.querySelector('.popup__form')
 
-openPopupProfileEdit.addEventListener('click', () => {
+openPopupProfileEditBtn.addEventListener('click', () => {
   openPopup(popupProfileEdit);
   inputUserName.value = nameProfile.textContent;
   inputUserJob.value = jobProfile.textContent;
 })
-closePopupProfileEdit.addEventListener('click', () => {
+closePopupProfileEditBtn.addEventListener('click', () => {
   closePopup(popupProfileEdit);
 })
 
