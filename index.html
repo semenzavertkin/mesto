@@ -31,16 +31,7 @@
 
       <section class="cards">
         <ul class="cards__list">
-          <template id="card-template">
-            <li class="card">
-              <img src="./images/Trash.svg" alt="удалить" class="card__delete">
-              <img src="#" alt="" class="card__img">
-              <div class="card__title">
-                <h2 class="card__name"></h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-          </template>
+          
         </ul>
       </section>
     </main>
@@ -49,11 +40,11 @@
       <p class="footer__author">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup popup_profile">
+    <div class="popup popup_type_profile">
       <div class="conteiner__popup">
-        <button class="popup__close popup__close_profile-edit" type="button"></button>
+        <button class="popup__close popup_close_profile-edit" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form action="" class="popup__form popup__form_profile-edit" name="popupForm">
+        <form action="" class="popup__form popup_form_profile-edit" name="popupFormProfile">
           <input name="userName" type="text" class="popup__input popup__input_form_user-name" placeholder="Имя"
             required>
           <input name="userJob" type="text" class="popup__input popup__input_form_user-job" placeholder="Профессия"
@@ -64,9 +55,9 @@
     </div>
     <div class="popup popup_add-card">
       <div class="conteiner__popup">
-        <button class="popup__close popup__close_add-card" type="button"></button>
+        <button class="popup__close popup_close_add-card" type="button"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form action="" class="popup__form popup__form_add-card" name="popupForm">
+        <form action="" class="popup__form popup_form_add-card" name="popupFormCard">
           <input name="cardName" type="text" class="popup__input popup__input_form_card-name" placeholder="Название"
             required>
           <input name="cardLink" type="text" class="popup__input popup__input_form_card-link"
@@ -77,12 +68,22 @@
     </div>
     <div class="popup popup_big-img">
       <div class="conteiner__popup-big-img">
-        <button class="popup__close popup__close_img" type="button"></button>
+        <button class="popup__close popup_close_img" type="button"></button>
         <img src="#" alt="" class="popup__img">
         <h2 class="popup__text"></h2>
       </div>
     </div>
   </div>
+  <template id="card-template">
+    <li class="card">
+      <button type="button" class="card__delete"></button>
+      <img src="#" alt="" class="card__img">
+      <div class="card__title">
+        <h2 class="card__name"></h2>
+        <button type="button" class="card__like-button"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 

@@ -4,7 +4,7 @@ const openPopup = (popupElement) => {
 }
 
 // Закртыие попапа
-const сlosePopup = (popupElement) => {
+const closePopup = (popupElement) => {
   popupElement.classList.remove('popup_opened');
 }
 
@@ -40,18 +40,20 @@ const initialCards = [
 const popupBigImg = document.querySelector(".popup_big-img");
 const popupImg = popupBigImg.querySelector(".popup__img");
 const popupText = popupBigImg.querySelector(".popup__text");
-const closePopupBigImg = popupBigImg.querySelector(".popup__close_img");
+const closePopupBigImg = popupBigImg.querySelector(".popup_close_img");
 closePopupBigImg.addEventListener('click', () => {
-  сlosePopup(popupBigImg);
+  closePopup(popupBigImg);
 })
 
 
 const cardTemplate = document.querySelector('#card-template').content;
 const addCard = (name, link) => {
   const card = cardTemplate.cloneNode(true);
-  card.querySelector('.card__img').src = link;
-  card.querySelector('.card__img').alt = name;
-  card.querySelector('.card__name').textContent = name;
+  const cardImg = card.querySelector(".card__img");
+  const cardName = card.querySelector(".card__name");
+  cardImg.src = link;
+  cardImg.alt = name;
+  cardName.textContent = name;
 
   // удаление карточки
   card.querySelector('.card__delete').addEventListener('click', (evt) => {
@@ -64,7 +66,7 @@ const addCard = (name, link) => {
   });
 
   // открытие попапа с картинкой
-  card.querySelector(".card__img").addEventListener("click", () => {
+  cardImg.addEventListener("click", () => {
     popupImg.src = link;
     popupImg.alt = name;
     popupText.textContent = name;
@@ -87,7 +89,7 @@ cardsContainer.append(
 // Поап добавления карточек
 const popupAddCard = document.querySelector('.popup_add-card');
 const openPopupAddCard = document.querySelector('.profile__add-button');
-const closePopupAddCard = document.querySelector('.popup__close_add-card');
+const closePopupAddCard = document.querySelector('.popup_close_add-card');
 const inputCardName = popupAddCard.querySelector('.popup__input_form_card-name');
 const inputCardlink = popupAddCard.querySelector('.popup__input_form_card-link');
 
@@ -96,28 +98,28 @@ openPopupAddCard.addEventListener('click', () => {
 });
 
 closePopupAddCard.addEventListener('click', () => {
-  сlosePopup(popupAddCard);
+  closePopup(popupAddCard);
 })
 
-const formCard = document.querySelector('.popup__form_add-card');
+const formCard = document.querySelector('.popup_form_add-card');
 const handleFormCardSubmit = (evt) => {
   evt.preventDefault();
   cardsContainer.prepend(addCard(inputCardName.value, inputCardlink.value));
   formCard.reset();
-  сlosePopup(popupAddCard);
+  closePopup(popupAddCard);
 }
 
 formCard.addEventListener('submit', handleFormCardSubmit);
 
 // Поап редактирование профиля
-const popupProfileEdit = document.querySelector('.popup_profile');
+const popupProfileEdit = document.querySelector('.popup_type_profile');
 const openPopupProfileEdit = document.querySelector('.profile__edit-button');
-const closePopupProfileEdit = document.querySelector('.popup__close_profile-edit');
+const closePopupProfileEdit = document.querySelector('.popup_close_profile-edit');
 const inputUserName = popupProfileEdit.querySelector('.popup__input_form_user-name');
 const inputUserJob = document.querySelector('.popup__input_form_user-job');
 const nameProfile = document.querySelector('.profile__name');
 const jobProfile = document.querySelector('.profile__job');
-const formProfile = document.querySelector('.popup__form_profile-edit')
+const formProfile = document.querySelector('.popup_form_profile-edit')
 
 openPopupProfileEdit.addEventListener('click', () => {
   openPopup(popupProfileEdit);
@@ -125,19 +127,14 @@ openPopupProfileEdit.addEventListener('click', () => {
   inputUserJob.value = jobProfile.textContent;
 })
 closePopupProfileEdit.addEventListener('click', () => {
-  сlosePopup(popupProfileEdit);
+  closePopup(popupProfileEdit);
 })
 
 const handleFormProfileSubmit = (evt) => {
   evt.preventDefault();
   nameProfile.textContent = inputUserName.value;
   jobProfile.textContent = inputUserJob.value;
-  сlosePopup(popupProfileEdit);
+  closePopup(popupProfileEdit);
 }
 
 formProfile.addEventListener('submit', handleFormProfileSubmit);
-
-
-
-
-
