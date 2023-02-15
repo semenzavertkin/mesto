@@ -86,7 +86,7 @@ formCard.addEventListener('submit', handleFormCardSubmit);
 // Поап редактирование профиля
 const popupProfileEdit = document.querySelector('.popup_type_profile');
 const openPopupProfileEditBtn = document.querySelector('.profile__edit-button');
-const closePopupProfileEditBtn = document.querySelector('.popup__close');
+const closePopupProfileEditBtn = popupProfileEdit.querySelector('.popup__close');
 const inputUserName = popupProfileEdit.querySelector('.popup__input_form_user-name');
 const inputUserJob = document.querySelector('.popup__input_form_user-job');
 const nameProfile = document.querySelector('.profile__name');
