@@ -1,5 +1,5 @@
-.popup__form {
+.popup__form_section {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    max-height: 44px;
 }

@@ -14,6 +14,7 @@ const popupImg = popupBigImg.querySelector('.popup__img');
 const popupText = popupBigImg.querySelector('.popup__text');
 const closePopupBigImg = popupBigImg.querySelector('.popup__close');
 closePopupBigImg.addEventListener('click', () => {
+  formCard.reset();
   closePopup(popupBigImg);
 })
 
@@ -70,6 +71,7 @@ openPopupAddCard.addEventListener('click', () => {
 });
 
 closePopupAddCard.addEventListener('click', () => {
+  formCard.reset();
   closePopup(popupAddCard);
 })
 
@@ -110,3 +112,21 @@ const handleFormProfileSubmit = (evt) => {
 }
 
 formProfile.addEventListener('submit', handleFormProfileSubmit);
+
+
+// Закрытие попапа нажатием Esc
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    const popupActive = document.querySelector('.popup_opened');
+    formCard.reset();
+    closePopup(popupActive);
+  }
+});
+// Закрытие попапа кликом на оверлей
+window.addEventListener('click', function (evt) {
+  const popupActive = document.querySelector('.popup_opened');
+  if (evt.target == popupActive) {
+    formCard.reset();
+    closePopup(popupActive);
+  }
+})
